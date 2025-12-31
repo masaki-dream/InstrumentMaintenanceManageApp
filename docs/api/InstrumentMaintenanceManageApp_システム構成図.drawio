@@ -1,0 +1,22 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.9">
+  <diagram name="ページ1" id="78QTuI8s-5OBxsVQex3H">
+    <mxGraphModel dx="1418" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m-y0F5hxFmR23BVaxjYp-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="60" width="30" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="m-y0F5hxFmR23BVaxjYp-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Spring Boot + Thymeleaf" vertex="1">
+          <mxGeometry height="60" width="120" x="150" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="m-y0F5hxFmR23BVaxjYp-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="REST API" vertex="1">
+          <mxGeometry height="60" width="120" x="350" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="m-y0F5hxFmR23BVaxjYp-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="PostgreSQL (Render)" vertex="1">
+          <mxGeometry height="60" width="120" x="550" y="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -15,21 +15,33 @@ Webアプリケーションとして管理することを目的とする。
 
 ## 2. システム構成
 
-- フロントエンド
-  - Thymeleaf（将来的にVue.jsへ置き換え予定）
-- バックエンド
+本システムは、フロントエンドとバックエンドを完全に分離した
+SPA + REST API 構成を採用する。
+
+- フロントエンド（画面層）
+  - Vue 3（Vite）
+  - REST APIを介してバックエンドと通信する
+  - 画面表示・ユーザー操作・API呼び出しを担当
+  - 業務ロジックは持たない
+
+- バックエンド（API層）
   - Spring Boot
+  - RESTful APIとして業務処理を提供
+  - JSON形式でレスポンスを返却する
+  - 業務ロジックはService層に集約する
+
 - インフラ
   - Render
+  - Spring Bootアプリケーションをデプロイ
 
-本システムでは以下2種類のControllerを持つ。
+本アプリケーションのバックエンドは、
+API提供に特化したControllerのみを持つ。
 
-- WebController  
-  - Thymeleaf用の画面描画を担当
-- ApiController  
-  - RESTful APIとして業務処理を提供
+- ApiController
+  - RESTful APIを提供
+  - 業務処理を実行し、JSONを返却する
 
-本設計書では ApiController を対象とする。
+画面描画を目的としたWebControllerは実装しない。
 
 ## 3. 業務ドメイン概要
 
@@ -53,6 +65,7 @@ Webアプリケーションとして管理することを目的とする。
 ## 4. リソース設計方針
 
 - 名詞を基本としたリソース設計を行う
+- フロントエンド（Vue）から操作しやすい粒度でAPIを定義する
 - 業務上の操作は「状態遷移」として表現する
 - 単純な更新（PUT）ではなく、業務イベントをAPI化する
 
@@ -69,6 +82,7 @@ Webアプリケーションとして管理することを目的とする。
 
 ### 概要
 指定した機材のメンテナンスを開始する。
+本APIはVueフロントエンドから呼び出されることを想定している。
 
 ### エンドポイント
 POST /api/instruments/{instrumentId}/maintenance/start

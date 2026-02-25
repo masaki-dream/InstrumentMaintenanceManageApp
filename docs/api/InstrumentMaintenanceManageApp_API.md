@@ -77,10 +77,11 @@ API提供に特化したControllerのみを持つ。
 | 機能 | メソッド | エンドポイント |
 |----|----|----|
 | ユーザー登録 | POST | /api/users |
-| ログイン | POST | /login |
-| JWTでトークン返却 | GET | /api/auth |
+| ログイン | POST | /api/auth/login |
 | 機材一覧取得 | GET | /api/instruments |
 | 機材詳細取得 | GET | /api/instruments/{id} |
+| 機材登録 | POST | /api/instruments |
+| 機材削除 | DELETE | /api/instruments/{id} |
 | メンテナンス開始 | POST | /api/instruments/{id}/maintenance/start |
 | メンテナンス完了 | POST | /api/instruments/{id}/maintenance/complete |
 

@@ -30,6 +30,9 @@ SPA + REST API 構成を採用する。
   - JSON形式でレスポンスを返却する
   - 業務ロジックはService層に集約する
 
+- DB 
+  - postgress(15.0)をDockerから使用
+
 - インフラ
   - Render
   - Spring Bootアプリケーションをデプロイ
@@ -127,7 +130,4 @@ POST /api/instruments/{instrumentId}/maintenance/start
 
 - JWTによる認証を採用
 - AuthorizationヘッダにBearerトークンを指定
-- 権限
-  - ADMIN
-  - USER
 

@@ -76,6 +76,9 @@ API提供に特化したControllerのみを持つ。
 
 | 機能 | メソッド | エンドポイント |
 |----|----|----|
+| ユーザー登録 | POST | /api/users |
+| ログイン | POST | /login |
+| JWTでトークン返却 | GET | /api/auth |
 | 機材一覧取得 | GET | /api/instruments |
 | 機材詳細取得 | GET | /api/instruments/{id} |
 | メンテナンス開始 | POST | /api/instruments/{id}/maintenance/start |

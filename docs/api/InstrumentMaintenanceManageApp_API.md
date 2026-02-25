@@ -80,8 +80,9 @@ API提供に特化したControllerのみを持つ。
 | ログイン | POST | /api/auth/login |
 | 機材一覧取得 | GET | /api/instruments |
 | 機材詳細取得 | GET | /api/instruments/{id} |
-| 機材登録 | POST | /api/instruments |
-| 機材削除 | DELETE | /api/instruments/{id} |
+| 機材情報登録 | POST | /api/instruments |
+| 機材情報更新 | PUT | /api/instruments/{id} |
+| 機材情報削除 | DELETE | /api/instruments/{id} |
 | メンテナンス開始 | POST | /api/instruments/{id}/maintenance/start |
 | メンテナンス完了 | POST | /api/instruments/{id}/maintenance/complete |
 

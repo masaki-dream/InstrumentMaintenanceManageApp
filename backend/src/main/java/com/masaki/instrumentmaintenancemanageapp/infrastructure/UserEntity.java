@@ -33,6 +33,8 @@ public class UserEntity {
     }
 
     // ===== getter =====
+    public Long getId() {return id;}
+
     public String getUsername() {
         return username;
     }

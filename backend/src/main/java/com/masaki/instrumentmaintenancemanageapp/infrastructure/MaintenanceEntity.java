@@ -1,5 +1,6 @@
 package com.masaki.instrumentmaintenancemanageapp.infrastructure;
 
+import com.masaki.instrumentmaintenancemanageapp.domain.MaintenanceAction;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -18,21 +19,9 @@ public class MaintenanceEntity {
     // DBにID採番を任せる
     private Long maintenanceId;
 
-    // ===== 対象番号 =====
-//    @Column(name = "instrument_id", nullable = false)
-//    private Long instrumentId;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "instrument_id", nullable = false)
-//    private InstrumentEntity instrumentId;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "instrument_id", nullable = false)
     private InstrumentEntity instrument;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "instrument_id", nullable = false)
-//    private InstrumentEntity instrument;
 
     // ===== 所有者 =====
     @Column(name = "user_id", nullable = false)
@@ -45,6 +34,11 @@ public class MaintenanceEntity {
     // ===== メンテナンス作業を実施した日時 =====
     @Column(name = "performed_at")
     private LocalDateTime performedAt;
+
+    // ===== メンテナンス実施時の状態 =====
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private MaintenanceAction action;
 
     // ===== setter =====
     public void setInstrument(InstrumentEntity instrument) {
@@ -63,6 +57,8 @@ public class MaintenanceEntity {
         this.performedAt = performedAt;
     }
 
+    public void setAction(MaintenanceAction action) { this.action = action; }
+
     // ===== getter =====
     public InstrumentEntity getInstrument() {
         return instrument;
@@ -79,4 +75,6 @@ public class MaintenanceEntity {
     public LocalDateTime getPerformedAt() {
         return performedAt;
     }
+
+    public MaintenanceAction getAction() { return action; }
 }

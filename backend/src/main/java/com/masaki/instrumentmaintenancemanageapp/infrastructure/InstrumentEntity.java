@@ -39,7 +39,7 @@ public class InstrumentEntity {
 
     // ===== 状態 =====
     @Enumerated(EnumType.STRING)
-    // enum名を文字列で保存（ACTIVE / MAINTAINING 等）
+    // enum名を文字列で保存（NOT_MAINTAINED, MAINTAINING, COMPLETED）
     @Column(nullable = false)
     private MaintenanceStatus status;
 
@@ -63,8 +63,37 @@ public class InstrumentEntity {
     }
 
     // ===== JPA用（必須） =====
-    protected InstrumentEntity() {
+    public InstrumentEntity() {
         // JPAはリフレクションで使う
+    }
+
+    // ===== setter =====
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMaintenanceType(String maintenanceType) {
+        this.maintenanceType = maintenanceType;
+    }
+
+    public void setStatus(MaintenanceStatus status) {
+        this.status = status;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setMaintenanceDate(LocalDateTime maintenanceDate) {
+        this.maintenanceDate = maintenanceDate;
+    }
+
+    public void setNextMaintenanceDate(LocalDateTime nextMaintenanceDate) {
+        this.nextMaintenanceDate = nextMaintenanceDate;
     }
 
     // ===== getter =====
@@ -84,6 +113,10 @@ public class InstrumentEntity {
         return status;
     }
 
+    public String getMaintenanceType() { return maintenanceType; }
+
+    public String getDescription() { return description; }
+
     // ---------------------------- 例外処理 Start --------------------------------------------
     // メンテナンス開始
     public void startMaintenance() {
@@ -92,15 +125,6 @@ public class InstrumentEntity {
             throw new InvalidMaintenanceStateException("既にメンテナンスされています。");
         }
         this.status = MaintenanceStatus.MAINTAINING;
-
-        // 履歴をドメイン責務として生成
-//        MaintenanceHistory history =
-//                MaintenanceHistory.start(this);
-//
-//        histories.add(history);
-//
-//        // 「どの履歴が作られたか」を外から分かるようにするため
-//        return history;
     }
 
     // メンテナンス終了
@@ -110,20 +134,8 @@ public class InstrumentEntity {
             throw new InvalidMaintenanceStateException("メンテナンス中でない機材は完了できません");
         }
 
-        // 最新の履歴を完了させる
-//        MaintenanceHistory latest =
-//                histories.get(histories.size() - 1);
-//
-//        latest.completeMaintenance();
-
         this.status = MaintenanceStatus.COMPLETED;
     }
-
-    // GET APIのための出口
-//    public List<MaintenanceHistory> getHistories() {
-//        return histories;
-//    }
-
 
     // ---------------------------- 例外処理 End --------------------------------------------
 

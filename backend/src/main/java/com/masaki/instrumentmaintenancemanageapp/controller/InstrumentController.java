@@ -1,8 +1,6 @@
 package com.masaki.instrumentmaintenancemanageapp.controller;
 
-import com.masaki.instrumentmaintenancemanageapp.controller.dto.InstrumentDetailResponse;
-import com.masaki.instrumentmaintenancemanageapp.controller.dto.InstrumentListResponse;
-import com.masaki.instrumentmaintenancemanageapp.controller.dto.MaintenanceRequest;
+import com.masaki.instrumentmaintenancemanageapp.controller.dto.*;
 import com.masaki.instrumentmaintenancemanageapp.exception.BadRequestException;
 import com.masaki.instrumentmaintenancemanageapp.service.MaintenanceService;
 import org.springframework.http.HttpStatus;
@@ -23,11 +21,6 @@ public class InstrumentController {
     }
 
     // 機材一覧取得 API
-//    @GetMapping
-//    public List<InstrumentListResponse> getAll() {
-//        return maintenanceService.getAll();
-//    }
-    // 機材一覧取得 API
     @GetMapping
     public List<InstrumentListResponse> getById() {
         return maintenanceService.getById();
@@ -42,48 +35,64 @@ public class InstrumentController {
         return maintenanceService.getAll(id);
     }
 
-    // メンテナンス開始 API
-    @PostMapping("/{id}/maintenance/start")
-    public ResponseEntity<Void> startMaintenance(
-            @PathVariable Long id
-    ) {
+    // メンテナンス登録API
+    @PostMapping("/{id}/maintenances/start")
+    public ResponseEntity<Void> startWithHistory(@PathVariable Long id,
+                                                 @RequestBody MaintenanceRequest request) {
+        maintenanceService.startWithHistory(id, request);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 
-        // 入力チェック（400対象）
+    // メンテナンス完了 API
+    @PostMapping("/{id}/maintenances/complete")
+    public ResponseEntity<Void> completeWithHistory(@PathVariable Long id,
+                                                    @RequestBody MaintenanceRequest request) {
+        maintenanceService.completeWithHistory(id, request);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    // 楽器新規作成API
+    @PostMapping
+    public ResponseEntity<Void> createInstrument(@RequestBody InstrumentCreateRequest request) {
+
+        if (request.getName() == null || request.getName().isBlank()) {
+            throw new BadRequestException("nameが不正です");
+        }
+
+        Long createdId = maintenanceService.createInstrument(request);
+
+        // 201 Created
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    // 更新処理
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updateInstrument(
+            @PathVariable Long id,
+            @RequestBody InstrumentUpdateRequest request
+    ) {
+        if (id == null || id <= 0) {
+            throw new BadRequestException("機材IDが不正です");
+        }
+        if (request.getName() == null || request.getName().isBlank()) {
+            throw new BadRequestException("楽器名が未入力です");
+        }
+
+        maintenanceService.updateInstrument(id, request);
+        return ResponseEntity.noContent().build(); // 204
+    }
+
+    // 楽器削除API
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteInstrument(@PathVariable Long id) {
+
         if (id == null || id <= 0) {
             throw new BadRequestException("機材IDが不正です");
         }
 
-        maintenanceService.startMaintenance(id);
+        maintenanceService.deleteInstrument(id);
 
-        // 正常なので204
-        return ResponseEntity.noContent().build();
-
+        return ResponseEntity.noContent().build(); // 204
     }
-
-    // メンテナンス完了 API
-    @PostMapping("/{id}/maintenance/complete")
-    public ResponseEntity<Void> completeMaintenance(
-            @PathVariable Long id
-    ) {
-
-        maintenanceService.completeMaintenance(id);
-
-        // 正常なので204
-        return ResponseEntity.noContent().build();
-    }
-
-    // メンテナンス登録API
-    @PostMapping("/{id}/maintenances")
-    public ResponseEntity<Void> registerMaintenance(
-            @PathVariable Long id,
-            @RequestBody MaintenanceRequest request
-    ) {
-        // メンテナンス登録
-        maintenanceService.register(id, request);
-
-        // 作成系なので 201 Created
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-    }
-
 
 }

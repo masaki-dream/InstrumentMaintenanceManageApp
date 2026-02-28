@@ -5,23 +5,23 @@ import java.time.LocalDateTime;
 // メンテナンス履歴表示用DTO
 public class MaintenanceHistoryResponse {
 
-    private LocalDateTime startedAt;
-    private LocalDateTime completedAt;
+    private LocalDateTime performedAt;
+    private String type;
 
     public MaintenanceHistoryResponse(
-            LocalDateTime startedAt,
-            LocalDateTime completedAt
+            LocalDateTime performedAt,
+            String type
     ) {
-        this.startedAt = startedAt;
-        this.completedAt = completedAt;
+        this.performedAt = performedAt;
+        this.type = type;
     }
 
-    public LocalDateTime getStartedAt() {
-        return startedAt;
+    public LocalDateTime getPerformedAt() {
+        return performedAt;
     }
 
-    public LocalDateTime getCompletedAt() {
-        return completedAt;
+    public String getType() {
+        return type;
     }
 
 

@@ -13,6 +13,10 @@ public class MaintenanceRequest {
     // 実施日
     private LocalDateTime performedAt;
 
+    // ===== setter =====
+    public void setType(String type) { this.type = type; }
+    public void setPerformedAt(LocalDateTime performedAt) { this.performedAt = performedAt; }
+
     // ===== getter =====
     public String getType() {
         return type;
@@ -22,9 +26,6 @@ public class MaintenanceRequest {
         return performedAt;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
 
 
 }

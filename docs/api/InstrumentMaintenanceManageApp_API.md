@@ -83,8 +83,8 @@ API提供に特化したControllerのみを持つ。
 | 機材情報登録 | POST | /api/instruments |
 | 機材情報更新 | PUT | /api/instruments/{id} |
 | 機材情報削除 | DELETE | /api/instruments/{id} |
-| メンテナンス開始 | POST | /api/instruments/{id}/maintenance/start |
-| メンテナンス完了 | POST | /api/instruments/{id}/maintenance/complete |
+| メンテナンス開始 | POST | /api/instruments/{id}/maintenances/start |
+| メンテナンス完了 | POST | /api/instruments/{id}/maintenances/complete |
 
 ## 6. メンテナンス開始API
 

@@ -118,7 +118,7 @@ const logout = () => {
   border-color: rgba(220,53,69,0.35);
 }
 
-/* スマホでは説明文を折り返し */
+/* スマホでは説明文を折り返しする */
 @media (max-width: 520px){
   .menu-btn{
     text-align: center;

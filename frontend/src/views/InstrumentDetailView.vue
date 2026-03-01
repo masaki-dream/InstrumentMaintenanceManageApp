@@ -363,6 +363,8 @@
   background: rgba(0,0,0,0.10);
   padding: 16px;
   box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+  /* 追加：iOSのinput描画のはみ出しをカード内に収める */
+  overflow: hidden;
 }
 
 .history-title{
@@ -394,9 +396,17 @@
   max-width: 100%;
 }
 
-/* datetime のカレンダーアイコンが見づらい場合の保険 */
+/* datetime-local のはみ出し対策（iOS対策強化） */
 .form input[type="datetime-local"]{
   color-scheme: light;
+
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+  -webkit-appearance: none;
 }
 
 .center-actions{

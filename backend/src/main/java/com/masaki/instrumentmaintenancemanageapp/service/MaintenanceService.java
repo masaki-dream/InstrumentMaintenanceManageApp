@@ -16,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.time.Clock;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,12 +27,14 @@ public class MaintenanceService {
     private final MaintenanceRepository maintenanceRepository;
     private final InstrumentEntityRepository instrumentEntityRepository;
     private final UserRepository userRepository;
+    private final Clock clock;
 
     // コンストラクタ
-    public MaintenanceService(MaintenanceRepository maintenanceRepository, InstrumentEntityRepository instrumentEntityRepository, UserRepository userRepository) {
+    public MaintenanceService(MaintenanceRepository maintenanceRepository, InstrumentEntityRepository instrumentEntityRepository, UserRepository userRepository, Clock clock) {
         this.maintenanceRepository = maintenanceRepository;
         this.instrumentEntityRepository = instrumentEntityRepository;
         this.userRepository = userRepository;
+        this.clock = clock;
     }
 
     // 更新API
@@ -231,7 +234,7 @@ public class MaintenanceService {
         }
 
         LocalDateTime min = LocalDateTime.of(2000, 1, 1, 0, 0);
-        LocalDateTime max = LocalDateTime.now().plusMinutes(10);
+        LocalDateTime max = LocalDateTime.now(clock).plusMinutes(10); // 日本時間で設定
 
         if (request.getPerformedAt().isBefore(min) || request.getPerformedAt().isAfter(max)) {
             throw new BadRequestException("実施日は2000年〜現在（+10分）までで入力してください");

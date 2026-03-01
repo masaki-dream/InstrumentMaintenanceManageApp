@@ -29,7 +29,8 @@ const login = async () => {
 
   } catch (error) {
     localStorage.removeItem("token")
-    showMessage("ログイン失敗", "error") // ← 統一
+    showMessage("ログイン失敗", "error")
+    console.error(error)
   }
 }
 </script>

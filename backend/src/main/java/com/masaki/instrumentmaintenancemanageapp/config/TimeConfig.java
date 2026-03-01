@@ -9,7 +9,7 @@ import java.time.ZoneId;
 @Configuration
 public class TimeConfig {
 
-    // TimeZoneを日本に揃える為
+    // TimeZoneを日本に揃える為の処理
     @Bean
     public Clock clock() {
         return Clock.system(ZoneId.of("Asia/Tokyo"));

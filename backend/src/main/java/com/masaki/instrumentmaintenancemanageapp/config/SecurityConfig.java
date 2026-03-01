@@ -62,7 +62,7 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
     }
 
-    // CORS対応
+    // CORS(Cross-Origin Resource Sharing)対応
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();

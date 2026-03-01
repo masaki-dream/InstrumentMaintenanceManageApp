@@ -387,6 +387,11 @@
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.12);
   outline: none;
+
+/* iOS/Safari対策：datetime-local が横幅を突き抜けるのを防ぐ */
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* datetime のカレンダーアイコンが見づらい場合の保険 */

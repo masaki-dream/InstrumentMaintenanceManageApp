@@ -38,16 +38,10 @@ SPA + REST API構成のWebアプリケーションです。
 
 #### 状態遷移API
 
-```text
-POST /api/instruments/{id}/maintenances/start
-# 状態を 未メンテナンス → メンテナンス中 に遷移
-POST /api/instruments/{id}/maintenances/complete
-# 状態を メンテナンス中 → メンテナンス完了 に遷移
-
-```
-
-
-
+| 操作 | メソッド | エンドポイント | 状態遷移 |
+|---|---|---|---|
+| メンテナンス開始 | POST | `/api/instruments/{id}/maintenances/start` | 未メンテナンス → メンテナンス中 |
+| メンテナンス完了 | POST | `/api/instruments/{id}/maintenances/complete` | メンテナンス中 → メンテナンス完了 |
 
 状態を直接更新するのではなく、  
 「開始」「完了」という業務イベントとして表現。
@@ -99,14 +93,14 @@ POST /api/instruments/{id}/maintenances/complete
 ## 機材の状態
 
 - NOT_MAINTAINED（未メンテナンス）
-- IN_PROGRESS（メンテナンス中）
+- MAINTAINING（メンテナンス中）
 - COMPLETED（メンテナンス終了）
 
 ## 状態遷移
 
 NOT_MAINTAINED  
 ↓ start  
-IN_PROGRESS  
+MAINTAINING  
 ↓ complete  
 COMPLETED  
 

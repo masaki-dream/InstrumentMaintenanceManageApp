@@ -36,19 +36,16 @@ SPA + REST API構成のWebアプリケーションです。
 ### ✅ 業務状態遷移をAPIで表現
 単純なCRUDではなく、業務イベントをAPIとして設計。
 
-例：
-```md
-### 状態遷移API
+#### 状態遷移API
 
-```http
+```text
 POST /api/instruments/{id}/maintenances/start
-→ 状態を 未メンテナンス → メンテナンス中 に遷移
-
-```http
+# 状態を 未メンテナンス → メンテナンス中 に遷移
 POST /api/instruments/{id}/maintenances/complete
-→ 状態を メンテナンス中 → メンテナンス終了 に遷移
+# 状態を メンテナンス中 → メンテナンス完了 に遷移
 
----
+```
+
 
 
 

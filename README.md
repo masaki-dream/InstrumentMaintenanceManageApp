@@ -1,10 +1,16 @@
+[![CI Backend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml)
+[![CI Frontend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml)
 # Instrument Maintenance Management App
 
 音楽機材（ギター・ピアノ等）のメンテナンス業務を管理する  
 SPA + REST API構成のWebアプリケーションです。
 
-[![CI Backend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml)
-[![CI Frontend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml)
+---
+
+## 🌐 Live Demo
+
+🔗 https://instrumentmaintenancemanageapp.onrender.com/
+
 ---
 
 

@@ -3,8 +3,8 @@
 音楽機材（ギター・ピアノ等）のメンテナンス業務を管理する  
 SPA + REST API構成のWebアプリケーションです。
 
-![CI](https://github.com/<YOUR_GITHUB_ID>/<YOUR_REPOSITORY_NAME>/actions/workflows/ci.yml/badge.svg)
-
+[![CI Backend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml)
+[![CI Frontend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml)
 ---
 
 

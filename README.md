@@ -1,4 +1,4 @@
-# 🎸 Instrument Maintenance Management App
+# Instrument Maintenance Management App
 
 音楽機材（ギター・ピアノ等）のメンテナンス業務を管理する  
 SPA + REST API構成のWebアプリケーションです。
@@ -8,7 +8,7 @@ SPA + REST API構成のWebアプリケーションです。
 ---
 
 
-# 📌 開発背景
+# 開発背景
 
 私はアコースティックギターを5年間、ピアノを数ヶ月演奏してきました。
 
@@ -24,7 +24,7 @@ SPA + REST API構成のWebアプリケーションです。
 
 ---
 
-# 🔥 このアプリでアピールしているポイント
+# このアプリでアピールしているポイント
 
 ### ✅ RESTful API設計
 - 名詞ベースのリソース設計
@@ -88,7 +88,7 @@ SPA + REST API構成のWebアプリケーションです。
 
 ---
 
-# 🧠 ドメイン設計
+# ドメイン設計
 
 ## 機材の状態
 
@@ -125,12 +125,12 @@ COMPLETED
 
 ---
 
-# 🔐 認証
+# 認証
 Authorization: Bearer <JWT>
 
 ---
 
-# 🎯 技術スタック
+# 技術スタック
 
 - Vue 3
 - Spring Boot
@@ -142,7 +142,7 @@ Authorization: Bearer <JWT>
 
 ---
 
-# 🚀 今後の改善予定
+# 今後の改善予定
 
 - 問い合わせフォームの実装
 - バグ改修・継続的改善

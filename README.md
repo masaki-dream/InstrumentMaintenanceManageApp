@@ -7,7 +7,7 @@ SPA + REST API構成のWebアプリケーションです。
 
 ---
 
-## 🌐 Live Demo
+## Live
 
 🔗 https://instrumentmaintenancemanageapp.onrender.com/
 
@@ -27,6 +27,12 @@ SPA + REST API構成のWebアプリケーションです。
 
 この経験から、  
 「音楽機材メンテナンス管理アプリ」を開発しました。
+
+---
+
+## アプリケーションデモ
+
+![App Demo](./docs/demo.gif)
 
 ---
 

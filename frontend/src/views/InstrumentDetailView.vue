@@ -89,7 +89,13 @@
       await fetchDetail()
     } catch (error) {
       console.error(error)
-      showMessage("開始失敗", "error")
+
+      const serverMsg =
+        error?.response?.data?.message ||
+        error?.response?.data ||
+        null
+
+      showMessage(serverMsg ?? "開始失敗", "error")
     }
   }
 
@@ -115,7 +121,13 @@
       await fetchDetail()
     } catch (error) {
       console.error(error)
-      showMessage("完了失敗", "error")
+
+      const serverMsg =
+        error?.response?.data?.message ||
+        error?.response?.data ||
+        null
+
+      showMessage(serverMsg ?? "完了失敗", "error")
     }
   }
 
@@ -141,11 +153,7 @@
         <!-- 概要 -->
         <div class="summary">
           <div class="kv">
-            <div class="k">ID</div>
-            <div class="v">{{ instrument.id }}</div>
-          </div>
-          <div class="kv">
-            <div class="k">名前</div>
+            <div class="k">楽器</div>
             <div class="v">{{ instrument.name }}</div>
           </div>
           <div class="kv">
@@ -351,9 +359,9 @@
 
 .section-title{
   margin: 10px 0 4px;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 800;
-  text-align: left;
+  text-align: center;
 }
 
 /* 入力サブカード（登録画面の雰囲気に寄せる） */

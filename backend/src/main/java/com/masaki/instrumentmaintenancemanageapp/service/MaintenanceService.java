@@ -199,6 +199,17 @@ public class MaintenanceService {
                 .findByIdAndUserId(instrumentId, userId)
                 .orElseThrow(() -> new InstrumentNotFoundException("機材が存在しません"));
 
+        // 完了日時が開始日時より前なら弾く
+        LocalDateTime completeAt = request.getPerformedAt();
+
+        MaintenanceEntity lastStart = maintenanceRepository
+                .findTopByInstrumentIdAndActionOrderByPerformedAtDesc(instrumentId, MaintenanceAction.START)
+                .orElseThrow(() -> new BadRequestException("開始履歴が無いため完了できません"));
+
+        if (completeAt.isBefore(lastStart.getPerformedAt())) {
+            throw new BadRequestException("完了日時は開始日時より後にしてください");
+        }
+
         // ===== 状態遷移 =====
         instrument.completeMaintenance();
 

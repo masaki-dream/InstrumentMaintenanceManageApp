@@ -15,7 +15,7 @@ SPA + REST API構成のWebアプリケーションです。
 
 ## デモ動画
 
-[デモ動画を見る](docs/demo.mov)
+![デモ動画を見る](./docs/demo.mov)
 
 ---
 

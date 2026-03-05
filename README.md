@@ -1,20 +1,25 @@
-[![CI Backend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml)
-[![CI Frontend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml)
 # Instrument Maintenance Management App
 
 音楽機材（ギター・ピアノ等）のメンテナンス業務を管理する  
 SPA + REST API構成のWebアプリケーションです。
 
----
-
-## Live
-
-🔗 https://instrumentmaintenancemanageapp.onrender.com/
+[![CI Backend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-backend.yml)
+[![CI Frontend](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/masaki-dream/InstrumentMaintenanceManageApp/actions/workflows/ci-frontend.yml)
 
 ---
 
-## デモ動画
-[デモ動画を見る](docs/demo.mp4)
+## アプリケーションURL
+
+https://instrumentmaintenancemanageapp.onrender.com/
+テスト用アカウント（ユーザー名・パスワード）: test111 / 111
+
+---
+
+## デモ動画（メンテナンス履歴管理）
+
+機材のメンテナンス開始・完了を記録し、履歴として管理する機能のデモです。
+
+[デモ動画を見る](https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/main/docs/demo.mp4)
 
 ---
 

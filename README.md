@@ -14,7 +14,7 @@ SPA + REST API構成のWebアプリケーションです。
 ---
 
 ## デモ動画
-[デモ動画を見る](https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/main/docs/demo.mov)
+[デモ動画を見る](docs/demo.mp4)
 
 ---
 

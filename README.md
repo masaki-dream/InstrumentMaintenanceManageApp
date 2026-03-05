@@ -11,7 +11,10 @@ SPA + REST API構成のWebアプリケーションです。
 ## アプリケーションURL
 
 https://instrumentmaintenancemanageapp.onrender.com/
-テスト用アカウント（ユーザー名・パスワード）: test111 / 111
+
+テスト用アカウント  
+ユーザー名: test111  
+パスワード: 111
 
 ---
 
@@ -19,7 +22,8 @@ https://instrumentmaintenancemanageapp.onrender.com/
 
 機材のメンテナンス開始・完了を記録し、履歴として管理する機能のデモです。
 
-[デモ動画を見る](https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/main/docs/demo.mp4)
+動画はこちら
+https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/main/docs/demo.mp4
 
 ---
 
@@ -37,12 +41,6 @@ https://instrumentmaintenancemanageapp.onrender.com/
 
 この経験から、  
 「音楽機材メンテナンス管理アプリ」を開発しました。
-
----
-
-## アプリケーションデモ
-
-![App Demo](./docs/demo.gif)
 
 ---
 

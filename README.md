@@ -60,8 +60,8 @@ https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/ma
 
 | 操作 | メソッド | エンドポイント | 状態遷移 |
 |---|---|---|---|
-| メンテナンス開始 | POST | `/api/instruments/{id}/maintenances/start` | 未メンテナンス → メンテナンス中 |
-| メンテナンス完了 | POST | `/api/instruments/{id}/maintenances/complete` | メンテナンス中 → メンテナンス完了 |
+| メンテナンス開始 | POST | `/api/instruments/{id}/maintenances/start` |未メンテナンス → メンテナンス中|
+| メンテナンス完了 | POST | `/api/instruments/{id}/maintenances/complete` |メンテナンス中 → メンテナンス完了|
 
 状態を直接更新するのではなく、  
 「開始」「完了」という業務イベントとして表現。

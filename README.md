@@ -20,10 +20,9 @@ https://instrumentmaintenancemanageapp.onrender.com/
 
 ## デモ動画（メンテナンス履歴管理）
 
-機材のメンテナンス開始・完了を記録し、履歴として管理する機能のデモです。
+楽器詳細画面からメンテナンス開始・完了を行い、履歴に反映されるまでの流れです。
 
-動画はこちら
-https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/main/docs/demo.mp4
+![demo](https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/main/docs/demo.gif)
 
 ---
 

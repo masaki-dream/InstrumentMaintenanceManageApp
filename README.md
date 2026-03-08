@@ -124,7 +124,7 @@ https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/ma
 - 1ユーザーは複数の機材を登録可能
 - 1機材に対して複数のメンテナンス履歴を登録可能
 
-![ER図](docs/er.png)
+![ER図](docs/er/er.png)
 
 ---
 

@@ -86,6 +86,15 @@ https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/ma
 
 # アーキテクチャ
 
+## システム構成図
+
+フロントエンドは Vue 3 を使用し、Render の Static Site としてデプロイしています。
+バックエンドは Spring Boot を Docker 化し、Render の Web Service としてデプロイしています。
+フロントエンドとバックエンドは REST API で通信し、認証には JWT を使用しています。
+データベースには Render Managed PostgreSQL を利用しています。
+
+![システム構成図](docs/architecture/system-architecture.png)
+
 ## フロントエンド
 - Vue 3（Vite）
 - SPA構成

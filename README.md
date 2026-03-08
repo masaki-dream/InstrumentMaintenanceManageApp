@@ -117,6 +117,17 @@ https://raw.githubusercontent.com/masaki-dream/InstrumentMaintenanceManageApp/ma
 
 ---
 
+# ER図
+
+本アプリでは、ユーザー・機材・メンテナンス履歴の3つのエンティティを中心にデータを管理しています。
+
+- 1ユーザーは複数の機材を登録可能
+- 1機材に対して複数のメンテナンス履歴を登録可能
+
+![ER図](docs/er.png)
+
+---
+
 # ドメイン設計
 
 ## 機材の状態
